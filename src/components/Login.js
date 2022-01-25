@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Link } from 'react-router-dom';
+
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import {
   Paper,
@@ -11,8 +11,10 @@ import {
   Button,
   Typography,
 } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const navigate = useNavigate();
   const paperStyle = {
     padding: 30,
     height: '70vh',
@@ -51,7 +53,13 @@ const Login = () => {
               required
             />
 
-            <Button type="submit" color="primary" fullWidth variant="contained">
+            <Button
+              type="submit"
+              color="primary"
+              fullWidth
+              variant="contained"
+              onClick={() => navigate('/Home')}
+            >
               Sign In
             </Button>
             <Grid align="center">
