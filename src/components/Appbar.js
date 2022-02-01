@@ -23,6 +23,7 @@ import CardMembershipOutlinedIcon from '@mui/icons-material/CardMembershipOutlin
 import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
 import AddTaskOutlinedIcon from '@mui/icons-material/AddTaskOutlined';
 import AnalyticsOutlinedIcon from '@mui/icons-material/AnalyticsOutlined';
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import { color } from '@mui/system';
 const drawerWidth = 240;
 const useStyles = (theme) => ({
@@ -86,7 +87,7 @@ function Appbar() {
             <ListItemIcon>
               <AddShoppingCartOutlinedIcon />
             </ListItemIcon>
-            <ListItemText>Point Of Sales</ListItemText>
+            <ListItemText>Point Of Sale</ListItemText>
           </ListItem>
           <Divider />
           <ListItem button>
@@ -101,6 +102,13 @@ function Appbar() {
               <AddTaskOutlinedIcon />
             </ListItemIcon>
             <ListItemText>Task Assignment</ListItemText>
+          </ListItem>
+          <Divider />
+          <ListItem button>
+            <ListItemIcon>
+              <LocationOnOutlinedIcon />
+            </ListItemIcon>
+            <ListItemText>Employees Location</ListItemText>
           </ListItem>
           <Divider />
           <ListItem button>

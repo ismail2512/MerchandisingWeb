@@ -17,7 +17,7 @@ const Login = () => {
   const navigate = useNavigate();
   const paperStyle = {
     padding: 30,
-    height: '70vh',
+    height: '50%',
     width: 480,
     margin: '40px auto',
   };

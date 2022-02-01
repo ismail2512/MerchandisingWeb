@@ -3,6 +3,7 @@ import Login from './components/Login';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import { Toolbar } from '@mui/material';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         </Routes>
         {/*  <Login /> */}
       </BrowserRouter>
+      <Footer />
     </>
   );
 }
