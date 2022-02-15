@@ -27,7 +27,7 @@ const ProbableLost = () => {
         options={options}
         series={series}
         width={'100%'}
-        height={415}
+        height={410}
         type="donut"
       />
     </>

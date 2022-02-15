@@ -14,7 +14,7 @@ import {
   Avatar,
   Divider,
 } from '@mui/material';
-
+import { Link, useNavigate } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import CategoryOutlinedIcon from '@mui/icons-material/CategoryOutlined';
@@ -31,7 +31,11 @@ const useStyles = (theme) => ({
     width: drawerWidth,
   },
 });
-function Appbar() {
+function Appbar(props) {
+  const navigate = useNavigate();
+  const gotoPage = (routeName) => {
+    navigate(`/${routeName}`);
+  };
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   return (
@@ -62,56 +66,56 @@ function Appbar() {
             <Typography variant="h6">Daaem Mutawarah</Typography>
           </ListItem>
           <Divider />
-          <ListItem button>
+          <ListItem button onClick={() => gotoPage('Home')}>
             <ListItemIcon>
               <HomeOutlinedIcon />
             </ListItemIcon>
             <ListItemText>Home</ListItemText>
           </ListItem>
           <Divider />
-          <ListItem button>
+          <ListItem button onClick={() => gotoPage('Customers')}>
             <ListItemIcon>
               <CardMembershipOutlinedIcon />
             </ListItemIcon>
             <ListItemText>Customers</ListItemText>
           </ListItem>
           <Divider />
-          <ListItem button>
+          <ListItem button onClick={() => gotoPage('Products')}>
             <ListItemIcon>
               <CategoryOutlinedIcon />
             </ListItemIcon>
             <ListItemText>SKU's</ListItemText>
           </ListItem>
           <Divider />
-          <ListItem button>
+          <ListItem button onClick={() => gotoPage('Point-of-sales')}>
             <ListItemIcon>
               <AddShoppingCartOutlinedIcon />
             </ListItemIcon>
             <ListItemText>Point Of Sale</ListItemText>
           </ListItem>
           <Divider />
-          <ListItem button>
+          <ListItem button onClick={() => gotoPage('Team')}>
             <ListItemIcon>
               <GroupsOutlinedIcon />
             </ListItemIcon>
             <ListItemText>Team</ListItemText>
           </ListItem>
           <Divider />
-          <ListItem button>
+          <ListItem button onClick={() => gotoPage('Task')}>
             <ListItemIcon>
               <AddTaskOutlinedIcon />
             </ListItemIcon>
             <ListItemText>Task Assignment</ListItemText>
           </ListItem>
           <Divider />
-          <ListItem button>
+          <ListItem button onClick={() => gotoPage('Live-location')}>
             <ListItemIcon>
               <LocationOnOutlinedIcon />
             </ListItemIcon>
             <ListItemText>Employees Location</ListItemText>
           </ListItem>
           <Divider />
-          <ListItem button>
+          <ListItem button onClick={() => gotoPage('Reports')}>
             <ListItemIcon>
               <AnalyticsOutlinedIcon />
             </ListItemIcon>
@@ -134,9 +138,13 @@ function Appbar() {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Welcome
+              {props.name}
             </Typography>
-            <Button color="inherit">Logout</Button>
+            <Button color="inherit">
+              <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+                Logout
+              </Link>
+            </Button>
           </Toolbar>
         </AppBar>
       </Box>

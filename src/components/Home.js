@@ -30,7 +30,7 @@ const Home = () => {
   const width = 4;
   return (
     <>
-      <Appbar />
+      <Appbar name="Admin Dashboard" />
 
       <Grid container spacing={2} style={margin}>
         <Grid item xs={10} sm={10} md={width} lg={width}>
@@ -72,24 +72,12 @@ const Home = () => {
           </Paper>
         </Grid>
         <Grid item xs={10} sm={10} md={5} lg={5}>
-          <Card>
-            <CardHeader
-              title="Probable Lost Sales Opportunity"
-              style={headerSpace}
-            />
-            <Paper>
-              <ProbableLost />
-            </Paper>
-          </Card>
-        </Grid>
-      </Grid>
-      <Grid container spacing={2} style={margin}>
-        <Grid item xs={10} sm={10} md={5} lg={5}>
           <Paper>
             <Visits />
           </Paper>
         </Grid>
-
+      </Grid>
+      <Grid container spacing={2} style={margin}>
         <Grid item xs={10} sm={10} md={4} lg={4}>
           <Paper>
             <Deliveries />
@@ -101,7 +89,19 @@ const Home = () => {
           </Card>
           <News />
         </Grid>
+        <Grid item xs={10} sm={10} md={5} lg={5} style={{ marginTop: '-8%' }}>
+          <Card>
+            <CardHeader
+              title="Probable Lost Sales Opportunity"
+              style={headerSpace}
+            />
+            <Paper>
+              <ProbableLost />
+            </Paper>
+          </Card>
+        </Grid>
       </Grid>
+      <Footer />
     </>
   );
 };
